@@ -21,11 +21,11 @@ export class CartService {
     return this.items;
   }
 
-  removeToCart(product){
-    this.items.reduce(product);
+  removeToCart(product) {
+    this.items.splice(this.items.indexOf(product), 1);
   }
-  
+
   getShippingPrices() {
-    return this.http.get('/assets/shipping.json');
+    return this.http.get("/assets/shipping.json");
   }
 }
